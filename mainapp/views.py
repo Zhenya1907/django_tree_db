@@ -1,7 +1,5 @@
-from django.http import HttpResponse
-from django.views.generic import View
+from django.views.generic import TemplateView
 
 
-class Index(View):
-    def get(self, *args, **kwargs):
-        return HttpResponse("Hello world")
+class MainPageView(TemplateView):
+    template_name = 'mainapp/index.html'
