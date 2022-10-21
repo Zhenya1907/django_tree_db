@@ -16,7 +16,7 @@ class Employee(models.Model):
     position = models.CharField(max_length=50, verbose_name="Position")
     employment_date = models.DateTimeField(auto_now_add=True, verbose_name="Employment date")
     salary = models.DecimalField(max_digits=6, decimal_places=0, verbose_name="Salary", default=0)
-    department_id = models.ForeignKey(Department)
+    department_id = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.pk} {self.first_name}"
